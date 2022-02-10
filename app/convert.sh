@@ -15,8 +15,10 @@ do
     do name=`echo "${i%.*}"`;
       echo "Converting $name"
       echo "File $i"
-      #ffmpeg -y -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128 -i "$i" -vf hwupload -b:v 2M  -c:v h264_vaapi "/convert/output/${name}_h264.mkv"
-      ffmpeg -y -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128 -i "$i" -vf hwupload -b:v 2M -c:v hevc_vaapi "/convert/output/${name}_hevc.mkv"
+      # This is h264
+      #ffmpeg -y -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128 -i "$i" -vf "format=nv12|vaapi,hwupload" -b:v 2M  -c:v h264_vaapi "/convert/output/${name}_h264.mkv"
+      # This is h265
+      ffmpeg -y -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128 -i "$i" -vf "format=nv12|vaapi,hwupload" -b:v 2M -c:v hevc_vaapi "/convert/output/${name}_hevc.mkv"
       mv "$i" "/convert/done/${i}"
     done
   else
