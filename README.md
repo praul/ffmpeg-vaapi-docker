@@ -9,7 +9,7 @@ This is a very simple docker image that watches a folder for files and tries to 
 4. Start a container with docker-compose: `docker-compose up -d`
 5. Put files in your convert/source folder. They will be transcoded.
 6. If you want to change the ffmpeg settings, change app/convert.sh and mount it in the container to `/app/convert.sh`
-7. Default convert settings are 2M Bitrate, HEVC
+7. Default convert settings are 2M Bitrate, HEVC, to change edit ffmpeg command at `-b:v 2M -c:v hevc_vaapi`
 
 ## docker-compose
 **recommended
