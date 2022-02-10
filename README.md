@@ -4,6 +4,7 @@ Autmatic transcoding of files in watched folder with vaapi / gpu support.
 It is based on newest ubuntu:jammy for recent mesa support. **should** work with amd and intel gpu. Tested on amdgpu polaris with base system debian 9 and 5.15.21-xanmod1 kernel.
 
 This is a very simple docker image that watches a folder for files and tries to transcode them. 
+I made this since I found no possibility of easy hw transcoding on my dated debian 9. Handbrake only supports recent ubuntu with full amd packages installed. Mesa versions on debian 9 are too old to support.
 
 1. Clone repo and enter folder
 2. Build the image: `docker build -t praul/ffmpeg .`
