@@ -1,5 +1,6 @@
 # ffmpeg-vaapi-docker
 Autmatic transcoding of files in watched folder with vaapi / gpu support
+It is based on newest ubuntu:jammy for recent mesa support. **should** work with amd and intel gpu. Tested on amdgpu polaris with base system debian 9 and 5.15.21-xanmod1 kernel.
 
 This is a very simple docker image that watches a folder for files and tries to transcode them. 
 
@@ -12,7 +13,7 @@ This is a very simple docker image that watches a folder for files and tries to 
 7. Default convert settings are 2M Bitrate, HEVC. To change, edit ffmpeg command at `-b:v 2M -c:v hevc_vaapi`
 
 ## docker-compose
-**recommended
+**recommended**
 ```
 version: '3.3'
 services:
