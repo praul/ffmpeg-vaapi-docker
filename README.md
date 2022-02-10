@@ -34,7 +34,7 @@ services:
       - /dev/dri/renderD128:/dev/dri/renderD128`#your render device
 ```
 
-##/app/convert.sh
+## /app/convert.sh
 ```
 #/bin/bash
 mkdir /convert/source
