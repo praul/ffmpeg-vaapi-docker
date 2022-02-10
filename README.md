@@ -12,8 +12,8 @@ This is a very simple docker image that watches a folder for files and tries to 
 
 ## docker-compose
 **recommended
-
-`version: '3.3'
+```
+version: '3.3'
 services:
   ffmpeg:
     image: praul/ffmpeg
@@ -31,3 +31,4 @@ services:
   
     devices:
       - /dev/dri/renderD128:/dev/dri/renderD128`#your render device
+```
